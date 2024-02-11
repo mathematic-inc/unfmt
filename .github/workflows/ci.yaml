@@ -1,0 +1,78 @@
+name: Continuous integration
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    name: Check code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c
+      - name: Set up Cargo cache
+        uses: ./.github/actions/cargo-cache
+        with:
+          key: ${{ hashFiles('**/Cargo.lock') }}
+      - name: Set up Rust
+        run: rustup default nightly
+      - name: Install Rust linters
+        run: rustup component add clippy rustfmt
+      - name: Lint Rust code
+        run: |
+          cargo fmt --check
+          cargo clippy --locked --all-features -- -D warnings
+      - name: Install other tools
+        run: |
+          cargo install --locked cargo-deny || true
+          cargo install --locked cargo-udeps || true
+      - name: Check everything else
+        run: |
+          cargo deny check
+          cargo udeps
+  tests:
+    name: Test on ${{ matrix.os.name }} (${{ matrix.channel }})
+    runs-on: ${{ matrix.os.value }}
+    strategy:
+      matrix:
+        os:
+          - name: Linux
+            value: ubuntu-latest
+          - name: Windows
+            value: windows-latest
+          - name: macOS
+            value: macos-latest
+        channel:
+          - stable
+          - beta
+          - nightly
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c
+      - name: Set up Cargo cache
+        uses: ./.github/actions/cargo-cache
+        with:
+          key: ${{ hashFiles('**/Cargo.lock') }}
+      - name: Set up Rust
+        run: rustup default ${{ matrix.channel }}
+      - name: Run tests
+        run: cargo test --locked
+  success:
+    name: Success
+    needs: [checks, tests]
+    if: success() || failure()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Success
+        if: success()
+        run: echo "Success!"
+      - name: Failure
+        if: failure()
+        run: echo "Failure!"; exit 1
