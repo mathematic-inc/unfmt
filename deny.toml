@@ -1,0 +1,20 @@
+[licenses]
+unlicensed = "deny"
+copyleft = "deny"
+default = "deny"
+unused-allowed-license = "allow"
+allow = [
+    "0BSD",
+    "Apache-2.0",
+    "BSD-2-Clause",
+    "BSD-3-Clause",
+    "BSD-4-Clause",
+    "CC0-1.0",
+    "ISC",
+    "MIT-0",
+    "MIT",
+    "MS-PL",
+    "Unicode-DFS-2016",
+    "Unlicense",
+    "Zlib",
+]

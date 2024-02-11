@@ -1,0 +1,19 @@
+name: Cache Cargo
+description: Cache Cargo artifacts
+inputs:
+  key:
+    description: An explicit key for restoring and saving the cache
+    required: true
+runs:
+  using: composite
+  steps:
+    - name: Set up cache
+      uses: actions/cache@87396fe6b4d327202df854ff5b3e0a4ea3d77ac6
+      with:
+        path: |
+          ~/.cargo/bin/
+          ~/.cargo/registry/index/
+          ~/.cargo/registry/cache/
+          ~/.cargo/git/db/
+        key: ${{ runner.os }}-cargo-${{ inputs.key }}
+        restore-keys: ${{ runner.os }}-cargo-

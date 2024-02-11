@@ -1,0 +1,29 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  check-release:
+    name: Check release
+    runs-on: ubuntu-latest
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+    steps:
+      - name: Run release please
+        id: release
+        uses: google-github-actions/release-please-action@514bc6cdae71484c998108f2136a8f5e4c62b9b9
+        with:
+          token: ${{ secrets.CHECK_RELEASE_TOKEN }}
+          command: manifest
+  release:
+    needs: check-release
+    name: Release
+    runs-on: ubuntu-latest
+    if: ${{ needs.check-release.outputs.release_created }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c
+      - name: Publish
+        run: cargo publish --locked --token ${{ secrets.CARGO_REGISTRY_TOKEN }}
