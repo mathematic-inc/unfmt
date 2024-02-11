@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Run release please
         id: release
-        uses: google-github-actions/release-please-action@514bc6cdae71484c998108f2136a8f5e4c62b9b9
+        uses: google-github-actions/release-please-action@cc61a07e2da466bebbc19b3a7dd01d6aecb20d1e
         with:
           token: ${{ secrets.CHECK_RELEASE_TOKEN }}
           command: manifest
@@ -24,6 +24,6 @@ jobs:
     if: ${{ needs.check-release.outputs.release_created }}
     steps:
       - name: Check out repository
-        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
       - name: Publish
         run: cargo publish --locked --token ${{ secrets.CARGO_REGISTRY_TOKEN }}
