@@ -20,16 +20,18 @@ cargo add -D unfmt
 ## Usage
 
 ```rs
+let value = "My name is Rho.";
+
 // Unnamed captures are returned as tuples.
 assert_eq!(
-    unformat!("My {} is {}.", "My name is Rho."),
+    unformat!("My {} is {}.", value),
     Some(("name", "Rho"))
 );
 
 // You can put indices as well; just make sure ALL captures use indices
 // otherwise it's not well defined.
 assert_eq!(
-    unformat!("My {1} is {0}.", "My name is Rho."),
+    unformat!("My {1} is {0}.", value),
     Some(("Rho", "name"))
 );
 
@@ -38,7 +40,7 @@ assert_eq!(
 let subject;
 let value;
 assert_eq!(
-    unformat!("My {subject} is {value}.", "My name is Rho."),
+    unformat!("My {subject} is {value}.", value),
     Some(())
 );
 assert_eq!((subject, value), (Some("name"), Some("Rho")));
@@ -56,5 +58,4 @@ captures in a row (i.e. `{}{}`) are not supported as they aren't well-defined.
 
 ## Limitations
 
-- Captures are always greedy, so usually a token on the left and right side of
-  a capture is needed.
+- There is no backtracking.
