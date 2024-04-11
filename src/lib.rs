@@ -168,11 +168,11 @@ impl ToTokens for Capture {
         };
         let text = LitByteStr::new(&self.text, Span::call_site());
 
-        // If text is empty, `find` will return `Some(0)` and the capture
-        // will be at the end of the pattern, so this capture (`__unfmt_left`) would
-        // be empty. Since captures are greedy, this capture should consume
-        // the remainder of the text, so we swap `__unfmt_left` and `__unfmt_right` to
-        // achieve this.
+        // If text is empty, `find` will return `Some(0)` and the capture will
+        // be at the end of the pattern, so this capture (`__unfmt_left`) would
+        // be empty. Since captures are inherently .*? in regex, this capture
+        // should consume the remainder of the text, so we swap `__unfmt_left`
+        // and `__unfmt_right` to achieve this.
         tokens.extend(if self.text.is_empty() {
             quote! { let (__unfmt_left, __unfmt_right) = (__unfmt_byte_text, b""); }
         } else {
@@ -197,7 +197,7 @@ impl ToTokens for Capture {
 ///
 ///  - Patterns are substring matched.
 ///  - Captures are written as `{<index-or-var>?(:<type>)?}` in the pattern.
-///  - Captures are greedy; i.e. they are `(.*)` in regex.
+///  - Captures are similar to `(.*?)` in regex, but without backtracking.
 ///  - Sequential captures (e.g. `{}{}`) are not supported and will return
 ///    `None`.
 ///
