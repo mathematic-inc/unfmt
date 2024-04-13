@@ -255,7 +255,7 @@ pub fn unformat(input: TokenStream) -> TokenStream {
     TokenStream::from(quote! {
         'unformat: {
             use ::std::str::FromStr;
-            use ::bstr::{ByteSlice, BStr};
+            use ::unfmt::bstr::{ByteSlice, BStr};
             let Some((__unfmt_left, mut __unfmt_byte_text)) = BStr::new(#text).split_once_str(#initial_part) else {
                 break 'unformat None;
             };

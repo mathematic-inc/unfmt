@@ -9,17 +9,17 @@ repository = "https://github.com/mathematic-inc/unfmt"
 categories = ["no-std", "value-formatting"]
 keywords = ["unformat", "regex"]
 
-[lib]
-proc-macro = true
+[workspace]
+members = ["unfmt-impl"]
 
-[lints.clippy]
+[workspace.lints.clippy]
 all = "deny"
 pedantic = "deny"
 restriction = "deny"
 nursery = "deny"
 # REASON: We disable them when they are not idiomatic.
 blanket_clippy_restriction_lints = { level = "allow", priority = 1 }
-# REAsON: Not idiomatic.
+# REASON: Not idiomatic.
 implicit_return = { level = "allow", priority = 1 }
 # REASON: False-positives with macros.
 pub_use = { level = "allow", priority = 1 }
@@ -58,6 +58,4 @@ needless_borrowed_reference = { level = "allow", priority = 1 }
 
 [dependencies]
 bstr = "1"
-syn = "2"
-quote = "1"
-proc-macro2 = "1"
+unfmt-impl = { path = "unfmt-impl" }

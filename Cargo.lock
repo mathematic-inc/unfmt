@@ -79,6 +79,14 @@ name = "unfmt"
 version = "0.1.0"
 dependencies = [
  "bstr",
+ "unfmt-impl",
+]
+
+[[package]]
+name = "unfmt-impl"
+version = "0.1.0"
+dependencies = [
+ "bstr",
  "proc-macro2",
  "quote",
  "syn",
