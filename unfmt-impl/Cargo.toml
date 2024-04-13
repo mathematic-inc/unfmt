@@ -1,0 +1,21 @@
+[package]
+name = "unfmt-impl"
+version = "0.1.0"
+edition = "2021"
+description = "Implementation of macros re-exported by `unfmt` crate"
+license = "MIT OR Apache-2.0"
+authors = ["Mathematic Inc"]
+repository = "https://github.com/mathematic-inc/unfmt"
+# to discourage using this crate directly, avoid adding keywords/categories here
+
+[lib]
+proc-macro = true
+
+[dependencies]
+bstr = "1"
+syn = "2"
+quote = "1"
+proc-macro2 = "1"
+
+[lints]
+workspace = true
