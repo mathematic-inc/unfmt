@@ -5,7 +5,9 @@
   "bump-patch-for-minor-pre-major": true,
   "packages": {
     ".": {},
-    "unfmt_macros": {}
+    "unfmt_macros": {
+      "initial-version": "0.1.0"
+    }
   },
   "plugins": ["sentence-case"]
 }
