@@ -1,5 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "group-pull-request-title-pattern": "chore: release ${version}",
   "pull-request-title-pattern": "chore: release ${version}",
   "pull-request-header": "Here is a summary of this release.",
   "release-type": "rust",
