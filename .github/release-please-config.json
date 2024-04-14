@@ -1,11 +1,27 @@
 {
   "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "pull-request-title-pattern": "chore: release ${version}",
+  "pull-request-header": "Here is a summary of this release.",
   "release-type": "rust",
   "bump-minor-pre-major": true,
   "bump-patch-for-minor-pre-major": true,
   "packages": {
-    ".": {},
+    ".": {
+      "component": "unfmt",
+      "include-component-in-tag": false
+    },
     "unfmt_macros": {}
   },
-  "plugins": ["sentence-case"]
+  "plugins": [
+    "sentence-case",
+    {
+      "type": "cargo-workspace",
+      "merge": false
+    },
+    {
+      "type": "linked-versions",
+      "groupName": "unfmt",
+      "components": ["unfmt", "unfmt_macros"]
+    }
+  ]
 }
