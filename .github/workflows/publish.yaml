@@ -1,6 +1,7 @@
 name: Publish
 
 on:
+  workflow_dispatch:
   push:
     tags:
       - "*-v*"
@@ -13,4 +14,4 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@cd7d8d697e10461458bc61a30d094dc601a8b017
       - name: Publish
-        run: cargo publish --locked --token ${{ secrets.CARGO_REGISTRY_TOKEN }} -p ${GITHUB_REF_NAME%-v*}
+        run: cargo publish --locked --token ${{ secrets.CRATES_IO_TOKEN }} -p ${GITHUB_REF_NAME%-v*}

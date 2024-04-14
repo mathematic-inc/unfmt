@@ -61,4 +61,4 @@ needless_borrowed_reference = { level = "allow", priority = 1 }
 
 [dependencies]
 bstr = "1"
-unfmt_macros = { path = "unfmt_macros" }
+unfmt_macros = { path = "unfmt_macros", version = "0.1.0" }
