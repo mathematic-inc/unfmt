@@ -8,7 +8,7 @@ runs:
   using: composite
   steps:
     - name: Set up cache
-      uses: actions/cache@87396fe6b4d327202df854ff5b3e0a4ea3d77ac6
+      uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9
       with:
         path: |
           ~/.cargo/bin/
