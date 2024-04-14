@@ -84,7 +84,7 @@ dependencies = [
 
 [[package]]
 name = "unfmt_macros"
-version = "0.1.1"
+version = "0.1.0"
 dependencies = [
  "bstr",
  "proc-macro2",
