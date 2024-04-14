@@ -1,0 +1,4 @@
+manifest: true
+handleGHRelease: true
+manifestConfig: .github/release-please-config.json
+manifestFile: .github/.release-please-manifest.json
