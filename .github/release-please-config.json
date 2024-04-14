@@ -7,7 +7,7 @@
   "packages": {
     ".": {},
     "unfmt_macros": {
-      "initial-version": "0.1.0"
+      "release-as": "0.1.0"
     }
   },
   "plugins": ["sentence-case"]
