@@ -3,7 +3,7 @@
   "release-type": "rust",
   "bump-minor-pre-major": true,
   "bump-patch-for-minor-pre-major": true,
-  "last-release-sha": "21a6897714cf07a4496c7e291061ad2ff9dfd15b",
+  "last-release-sha": "6ccc3033e5103004c16e9029e0f76e1939397eb7",
   "packages": {
     ".": {},
     "unfmt_macros": {
