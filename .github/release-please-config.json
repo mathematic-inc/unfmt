@@ -3,12 +3,9 @@
   "release-type": "rust",
   "bump-minor-pre-major": true,
   "bump-patch-for-minor-pre-major": true,
-  "last-release-sha": "6ccc3033e5103004c16e9029e0f76e1939397eb7",
   "packages": {
     ".": {},
-    "unfmt_macros": {
-      "release-as": "0.1.0"
-    }
+    "unfmt_macros": {}
   },
   "plugins": ["sentence-case"]
 }
