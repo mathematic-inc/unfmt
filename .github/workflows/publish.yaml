@@ -4,6 +4,7 @@ on:
   push:
     tags:
       - "*-v*"
+      - "v*"
 
 jobs:
   publish:
@@ -13,4 +14,9 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@cd7d8d697e10461458bc61a30d094dc601a8b017
       - name: Publish
-        run: cargo publish --locked --token ${{ secrets.CRATES_IO_TOKEN }} -p ${GITHUB_REF_NAME%-v*}
+        run: |
+          if [[ $GITHUB_REF_NAME == *-v* ]]; then
+            cargo publish --locked --token ${{ secrets.CRATES_IO_TOKEN }} -p ${GITHUB_REF_NAME%-v*}
+          else
+            cargo publish --locked --token ${{ secrets.CRATES_IO_TOKEN }}
+          fi
