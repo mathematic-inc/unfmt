@@ -3,6 +3,7 @@
   "group-pull-request-title-pattern": "chore: release ${version}",
   "pull-request-title-pattern": "chore: release ${version}",
   "pull-request-header": "Here is a summary of this release.",
+  "last-release-sha": "75a4a32be933f0453be57eacdad95e1839e1b343",
   "release-type": "rust",
   "bump-minor-pre-major": true,
   "bump-patch-for-minor-pre-major": true,
