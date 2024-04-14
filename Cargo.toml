@@ -1,6 +1,6 @@
 [package]
 name = "unfmt"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "A compile-time pattern matching library that reverses the interpolation process of `format!`."
 license = "MIT OR Apache-2.0"
