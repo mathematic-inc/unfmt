@@ -1,0 +1,23 @@
+[package]
+name = "unfmt_macros"
+version = "0.1.0"
+edition = "2021"
+description = "A compile-time pattern matching library that reverses the interpolation process of `format!`."
+license = "MIT OR Apache-2.0"
+authors = ["Mathematic Inc"]
+repository = "https://github.com/mathematic-inc/unfmt"
+categories = ["no-std", "value-formatting"]
+keywords = ["unformat", "regex"]
+
+[lib]
+proc-macro = true
+path = "./unfmt_macros.rs"
+
+[lints]
+workspace = true
+
+[dependencies]
+bstr = "1"
+syn = "2"
+quote = "1"
+proc-macro2 = "1"
