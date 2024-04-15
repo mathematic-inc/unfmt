@@ -40,7 +40,11 @@ impl Parse for Unformat {
         let text = input.parse::<Expr>()?;
 
         let full_match = if input.parse::<Token![,]>().is_ok() {
-            input.parse::<LitBool>()?.value
+            if let Ok(bool) = input.parse::<LitBool>() {
+                bool.value
+            } else {
+                false
+            }
         } else {
             false
         };
