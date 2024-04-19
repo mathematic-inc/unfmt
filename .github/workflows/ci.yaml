@@ -70,9 +70,9 @@ jobs:
     if: success() || failure()
     runs-on: ubuntu-latest
     steps:
-      - name: Success
-        if: success()
-        run: echo "Success!"
       - name: Failure
         if: failure()
         run: echo "Failure!"; exit 1
+      - name: Success
+        if: success()
+        run: echo "Success!"
