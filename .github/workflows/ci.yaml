@@ -18,11 +18,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f
+        uses: actions/checkout@37b082107ba410260a3aaddf93122e04801ce631
       - name: Set up Rust
         run: rustup default nightly
       - name: Install development tools
-        uses: taiki-e/install-action@e553ccd87e21fd7eeca7478760ec8dbf0bd45831
+        uses: taiki-e/install-action@e7e3978ba00920884c8a5790a28699b85397e972
         with:
           tool: cargo-deny@0.14.21, cargo-udeps@0.1.47
       - name: Install Rust linters
@@ -51,7 +51,7 @@ jobs:
           - nightly
     steps:
       - name: Check out repository
-        uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f
+        uses: actions/checkout@37b082107ba410260a3aaddf93122e04801ce631
       - name: Set up Rust
         run: rustup default ${{ matrix.channel }}
       - name: Run tests
@@ -61,11 +61,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f
+        uses: actions/checkout@37b082107ba410260a3aaddf93122e04801ce631
       - name: Set up Rust
         run: rustup default nightly
       - name: Install development tools
-        uses: taiki-e/install-action@e553ccd87e21fd7eeca7478760ec8dbf0bd45831
+        uses: taiki-e/install-action@e7e3978ba00920884c8a5790a28699b85397e972
         with:
           tool: cargo-llvm-cov@0.6.9
       - name: Generate code coverage
