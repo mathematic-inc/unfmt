@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@cd7d8d697e10461458bc61a30d094dc601a8b017
+        uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f
       - name: Set up Cargo cache
         uses: ./.github/actions/cargo-cache
         with:
@@ -55,7 +55,7 @@ jobs:
           - nightly
     steps:
       - name: Check out repository
-        uses: actions/checkout@cd7d8d697e10461458bc61a30d094dc601a8b017
+        uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f
       - name: Set up Cargo cache
         uses: ./.github/actions/cargo-cache
         with:
