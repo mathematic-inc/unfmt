@@ -22,7 +22,7 @@ jobs:
       - name: Set up Rust
         run: rustup default nightly
       - name: Install development tools
-        uses: taiki-e/install-action@70ccd614419e107d8eff28312ace2379689c805f
+        uses: taiki-e/install-action@6261d093c5f01aa48722a4640a5b00a02a358aac
         with:
           tool: cargo-deny@0.14.21, cargo-udeps@0.1.47
       - name: Install Rust linters
@@ -65,7 +65,7 @@ jobs:
       - name: Set up Rust
         run: rustup default nightly
       - name: Install development tools
-        uses: taiki-e/install-action@70ccd614419e107d8eff28312ace2379689c805f
+        uses: taiki-e/install-action@6261d093c5f01aa48722a4640a5b00a02a358aac
         with:
           tool: cargo-llvm-cov@0.6.9
       - name: Generate code coverage
