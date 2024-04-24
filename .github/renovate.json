@@ -3,9 +3,24 @@
   "extends": ["config:recommended"],
   "packageRules": [
     {
-      "matchManagers": ["github-actions", "cargo"],
+      "matchManagers": ["github-actions", "cargo", "regex"],
       "groupName": "{{manager}}",
       "automerge": true
+    }
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": [
+        "(^|/)(workflow-templates|.(?:github|gitea|forgejo)/(?:workflows|actions))/.+.ya?ml$",
+        "(^|/)action.ya?ml$"
+      ],
+      "matchStringsStrategy": "recursive",
+      "matchStrings": [
+        "taiki-e/install-action(?:[\\s\\S]+?)tool:\\s*(.*)",
+        "(?<depName>[^@\\s]*)@(?<currentValue>[^,\\s]*)"
+      ],
+      "datasourceTemplate": "crate"
     }
   ]
 }
