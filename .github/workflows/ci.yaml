@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@43045ae669be728bd34ed56fcd1a230c0dc4d8e2
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
       - name: Set up Rust
         run: rustup default nightly
       - name: Install development tools
@@ -52,7 +52,7 @@ jobs:
           - nightly
     steps:
       - name: Check out repository
-        uses: actions/checkout@43045ae669be728bd34ed56fcd1a230c0dc4d8e2
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
       - name: Set up Rust
         run: rustup default ${{ matrix.channel }}
       - name: Install development tools
@@ -66,7 +66,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@43045ae669be728bd34ed56fcd1a230c0dc4d8e2
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
       - name: Set up Rust
         run: rustup default nightly
       - name: Install development tools
