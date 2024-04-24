@@ -12,9 +12,7 @@
       "component": "unfmt",
       "include-component-in-tag": false
     },
-    "unfmt_macros": {
-      "release-as": "0.1.2"
-    }
+    "unfmt_macros": {}
   },
   "plugins": [
     "sentence-case",

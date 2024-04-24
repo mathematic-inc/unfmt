@@ -4,7 +4,8 @@
   "packageRules": [
     {
       "matchManagers": ["github-actions", "cargo"],
-      "groupName": "{{manager}}"
+      "groupName": "{{manager}}",
+      "automerge": true
     }
   ]
 }

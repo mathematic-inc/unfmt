@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@cd7d8d697e10461458bc61a30d094dc601a8b017
+        uses: actions/checkout@43045ae669be728bd34ed56fcd1a230c0dc4d8e2
       - name: Publish
         run: |
           if [[ $GITHUB_REF_NAME == *-v* ]]; then
