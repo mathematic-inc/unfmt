@@ -55,7 +55,7 @@ jobs:
       - name: Set up Rust
         run: rustup default ${{ matrix.channel }}
       - name: Install development tools
-        uses: taiki-e/install-action@e7e3978ba00920884c8a5790a28699b85397e972
+        uses: taiki-e/install-action@6261d093c5f01aa48722a4640a5b00a02a358aac
         with:
           tool: cargo-hack@0.6.28
       - name: Run tests
