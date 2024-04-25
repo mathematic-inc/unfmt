@@ -38,12 +38,12 @@ assert_eq!(
 // You can also name captures using variables, but make sure you check the
 // return is not None.
 let subject;
-let value;
+let object;
 assert_eq!(
-    unformat!("My {subject} is {value}.", value),
+    unformat!("My {subject} is {object}.", value),
     Some(())
 );
-assert_eq!((subject, value), (Some("name"), Some("Rho")));
+assert_eq!((subject, object), (Some("name"), Some("Rho")));
 
 // If a type implements `FromStr`, you can use it as a type argument. This
 // is written as `{:Type}`.
