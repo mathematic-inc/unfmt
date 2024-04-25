@@ -29,11 +29,11 @@ jobs:
         run: rustup component add clippy rustfmt
       - name: Run checks
         run: |
-          cargo fmt --check
-          cargo hack --feature-powerset check
-          cargo hack --feature-powerset clippy --locked -- -D warnings
+          cargo fmt --check --all
+          cargo hack --feature-powerset check --locked --workspace
+          cargo hack --feature-powerset clippy --locked --workspace -- -D warnings
           cargo deny check
-          cargo udeps
+          cargo udeps --locked --workspace
   tests:
     name: Test on ${{ matrix.os.name }} (${{ matrix.channel }})
     runs-on: ${{ matrix.os.value }}
@@ -60,7 +60,7 @@ jobs:
         with:
           tool: cargo-hack@0.6.28
       - name: Run tests
-        run: cargo hack --feature-powerset test
+        run: cargo hack --feature-powerset test --locked
   coverage:
     name: Coverage
     runs-on: ubuntu-latest
@@ -77,7 +77,7 @@ jobs:
         run: mkdir -p target/llvm-cov/lcov
       - name: Generate code coverage
         run: |
-          cargo hack --feature-powerset llvm-cov --no-report --branch --workspace
+          cargo hack --feature-powerset llvm-cov --no-report --branch --locked --workspace
           cargo llvm-cov report --fail-under-lines 85 --lcov --output-path target/llvm-cov/lcov/${{ github.event.repository.name }}.info
       - name: Upload code coverage
         uses: romeovs/lcov-reporter-action@4cf015aa4afa87b78238301f1e3dc140ea0e1ec6
