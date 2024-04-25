@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/mathematic-inc/unfmt/compare/unfmt_macros-v0.1.2...unfmt_macros-v0.1.3) (2024-04-25)
+
+
+### Bug Fixes
+
+* **deps:** Update cargo ([#34](https://github.com/mathematic-inc/unfmt/issues/34)) ([b957d02](https://github.com/mathematic-inc/unfmt/commit/b957d021a0bbc43473e0d3818c54ecfa979c83a4))
+
 ## [0.1.2](https://github.com/mathematic-inc/unfmt/compare/unfmt_macros-v0.1.0...unfmt_macros-v0.1.2) (2024-04-15)
 
 
