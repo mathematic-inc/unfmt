@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.1.3](https://github.com/mathematic-inc/unfmt/compare/v0.1.2...v0.1.3) (2024-04-25)
+
+
+### Bug Fixes
+
+* **deps:** Update cargo ([#34](https://github.com/mathematic-inc/unfmt/issues/34)) ([b957d02](https://github.com/mathematic-inc/unfmt/commit/b957d021a0bbc43473e0d3818c54ecfa979c83a4))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * unfmt_macros bumped from 0.1.2 to 0.1.3
+
 ## [0.1.2](https://github.com/mathematic-inc/unfmt/compare/v0.1.1...v0.1.2) (2024-04-15)
 
 
