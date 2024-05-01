@@ -60,5 +60,5 @@ module_name_repetitions = { level = "allow", priority = 1 }
 needless_borrowed_reference = { level = "allow", priority = 1 }
 
 [dependencies]
-bstr = "1"
+bstr = "1.9.1"
 unfmt_macros = { path = "unfmt_macros", version = "0.1.3" }
