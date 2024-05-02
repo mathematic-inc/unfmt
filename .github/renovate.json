@@ -20,7 +20,7 @@
         "taiki-e/install-action(?:[\\s\\S]+?)tool:\\s*(.*)",
         "(?<depName>[^@\\s]*)@(?<currentValue>[^,\\s]*)"
       ],
-      "versioningTemplate": "cargo",
+      "versioningTemplate": "semver",
       "datasourceTemplate": "crate"
     }
   ]
