@@ -21,7 +21,7 @@
         "(?<depName>[^@\\s]*)@(?<currentValue>[^,\\s]*)"
       ],
       "versioningTemplate": "cargo",
-      "datasourceTemplate": "cargo"
+      "datasourceTemplate": "crate"
     }
   ]
 }
