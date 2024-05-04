@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.2.0](https://github.com/mathematic-inc/unfmt/compare/v0.1.3...v0.2.0) (2024-05-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* return non-tuple for single captures
+
+### Features
+
+* Return non-tuple for single captures ([a068904](https://github.com/mathematic-inc/unfmt/commit/a0689041fd3ba0ef38380a47d1805077cd9a9d26))
+
+
+### Bug Fixes
+
+* **deps:** Update cargo ([#42](https://github.com/mathematic-inc/unfmt/issues/42)) ([87a4a6b](https://github.com/mathematic-inc/unfmt/commit/87a4a6b7ab377ce88e9cd1e5daf54a8d531c9b90))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * unfmt_macros bumped from 0.1.3 to 0.2.0
+
 ## [0.1.3](https://github.com/mathematic-inc/unfmt/compare/v0.1.2...v0.1.3) (2024-04-25)
 
 
