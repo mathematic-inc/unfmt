@@ -260,7 +260,7 @@ pub fn unformat(input: TokenStream) -> TokenStream {
                 break 'unformat None;
             };
             #capture_block
-            Some((#(#capture_idents,)*))
+            Some((#(#capture_idents),*))
         }
     })
 }

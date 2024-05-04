@@ -13,13 +13,13 @@ fn test_unformat() {
 
 #[test]
 fn test_unformat_captures() {
-    assert_eq!(unformat!("{}", "abc"), Some(("abc",)));
-    assert_eq!(unformat!("{}bc", "abc"), Some(("a",)));
-    assert_eq!(unformat!("a{}c", "abc"), Some(("b",)));
-    assert_eq!(unformat!("ab{}", "abc"), Some(("c",)));
+    assert_eq!(unformat!("{}", "abc"), Some("abc"));
+    assert_eq!(unformat!("{}bc", "abc"), Some("a"));
+    assert_eq!(unformat!("a{}c", "abc"), Some("b"));
+    assert_eq!(unformat!("ab{}", "abc"), Some("c"));
     assert_eq!(unformat!("{}{}c", "abc"), None);
     assert_eq!(unformat!("{}b{}", "abc"), Some(("a", "c")));
-    assert_eq!(unformat!("a{}c", "acd"), Some(("",)));
+    assert_eq!(unformat!("a{}c", "acd"), Some(""));
 }
 
 #[test]
@@ -36,12 +36,10 @@ fn test_unformat_named_captures() {
 
 #[test]
 fn test_unformat_typed_captures() {
-    assert_eq!(unformat!("ab{:usize}", "ab152"), Some((152,)));
+    assert_eq!(unformat!("ab{:usize}", "ab152"), Some(152));
     assert_eq!(
         unformat!("ab{:SocketAddr}a", "ab127.0.0.1:3000a"),
-        SocketAddr::from_str("127.0.0.1:3000")
-            .ok()
-            .map(|addr| (addr,))
+        SocketAddr::from_str("127.0.0.1:3000").ok()
     );
 }
 
