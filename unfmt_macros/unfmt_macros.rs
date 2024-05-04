@@ -266,9 +266,11 @@ pub fn unformat(input: TokenStream) -> TokenStream {
 }
 
 fn compile(pattern: &[u8], is_pattern_str: bool) -> (Vec<u8>, Vec<Capture>) {
-    let pattern = pattern
-        .replace(b"{{", "\u{f8fd}")
-        .replace(b"}}", "\u{f8fe}");
+    let mut pattern = pattern.replace(b"{{", "\u{f8fd}");
+    pattern.reverse();
+    let mut pattern = pattern.replace(b"}}", "\u{f8fe}");
+    pattern.reverse();
+
     let mut pattern_parts = pattern.split_str("{");
 
     // SAFETY: The first part is always present.
@@ -276,7 +278,7 @@ fn compile(pattern: &[u8], is_pattern_str: bool) -> (Vec<u8>, Vec<Capture>) {
         pattern_parts
             .next()
             .unwrap_unchecked()
-            .replace("\u{f8ff}", "{{")
+            .replace("\u{f8fd}", "{")
     };
 
     let mut current_index: u32 = 0;
@@ -289,7 +291,10 @@ fn compile(pattern: &[u8], is_pattern_str: bool) -> (Vec<u8>, Vec<Capture>) {
             .to_str()
             .expect("invalid UTF-8 in capture names")
             .to_owned();
-        let text = text.replace("\u{f8fd}", "{").replace("\u{f8fe}", "}");
+        let mut text = text.replace("\u{f8fd}", b"{");
+        text.reverse();
+        let mut text = text.replace("\u{f8fe}", b"}");
+        text.reverse();
         compiled_pattern.push(Capture::new(
             &text,
             &capture,
