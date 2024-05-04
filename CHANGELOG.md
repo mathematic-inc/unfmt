@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.2.1](https://github.com/mathematic-inc/unfmt/compare/v0.2.0...v0.2.1) (2024-05-04)
+
+
+### Bug Fixes
+
+* Fix escapes ([d17085e](https://github.com/mathematic-inc/unfmt/commit/d17085ef1dd1516c66b386b5d3bb265ae1e92407))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * unfmt_macros bumped from 0.2.0 to 0.2.1
+
 ## [0.2.0](https://github.com/mathematic-inc/unfmt/compare/v0.1.3...v0.2.0) (2024-05-04)
 
 
