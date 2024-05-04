@@ -76,7 +76,7 @@ dependencies = [
 
 [[package]]
 name = "unfmt"
-version = "0.1.3"
+version = "0.2.0"
 dependencies = [
  "bstr",
  "unfmt_macros",
@@ -84,7 +84,7 @@ dependencies = [
 
 [[package]]
 name = "unfmt_macros"
-version = "0.1.3"
+version = "0.2.0"
 dependencies = [
  "bstr",
  "proc-macro2",
