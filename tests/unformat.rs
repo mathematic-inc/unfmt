@@ -35,6 +35,13 @@ fn test_unformat_named_captures() {
 }
 
 #[test]
+fn test_unformat_escaped_captures() {
+    let mut name = None;
+    assert_eq!(unformat!("a{{{name}}}c", "a{b}c"), Some(()));
+    assert_eq!(name, Some("b"));
+}
+
+#[test]
 fn test_unformat_typed_captures() {
     assert_eq!(unformat!("ab{:usize}", "ab152"), Some(152));
     assert_eq!(
