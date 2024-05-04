@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/mathematic-inc/unfmt/compare/unfmt_macros-v0.2.0...unfmt_macros-v0.2.1) (2024-05-04)
+
+
+### Bug Fixes
+
+* Fix escapes ([d17085e](https://github.com/mathematic-inc/unfmt/commit/d17085ef1dd1516c66b386b5d3bb265ae1e92407))
+
 ## [0.2.0](https://github.com/mathematic-inc/unfmt/compare/unfmt_macros-v0.1.3...unfmt_macros-v0.2.0) (2024-05-04)
 
 
