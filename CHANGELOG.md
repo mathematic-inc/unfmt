@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.2.2](https://github.com/mathematic-inc/unfmt/compare/v0.2.1...v0.2.2) (2024-05-14)
+
+
+### Bug Fixes
+
+* **deps:** Update rust crate proc-macro2 to v1.0.82 ([#58](https://github.com/mathematic-inc/unfmt/issues/58)) ([e2bee12](https://github.com/mathematic-inc/unfmt/commit/e2bee129c9ff958fea796a23b8da2d48e09f6152))
+* **deps:** Update rust crate syn to v2.0.61 ([#56](https://github.com/mathematic-inc/unfmt/issues/56)) ([d5fc873](https://github.com/mathematic-inc/unfmt/commit/d5fc8733f4b016df6352cc9c2f98cd6dd7604c33))
+* **deps:** Update rust crate syn to v2.0.62 ([#65](https://github.com/mathematic-inc/unfmt/issues/65)) ([e7192e7](https://github.com/mathematic-inc/unfmt/commit/e7192e744089e6fb80ed6aeb72e9e6336f927a8a))
+* **deps:** Update rust crate syn to v2.0.63 ([#69](https://github.com/mathematic-inc/unfmt/issues/69)) ([8b3f3cd](https://github.com/mathematic-inc/unfmt/commit/8b3f3cd3ad218b4934affb4413635ce407910cd7))
+* Parse `syn::Lit` instead of `syn::Expr` ([#72](https://github.com/mathematic-inc/unfmt/issues/72)) ([c3621f8](https://github.com/mathematic-inc/unfmt/commit/c3621f83f383a97b66229595a31ef3ec13d8a1ba))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * unfmt_macros bumped from 0.2.1 to 0.2.2
+
 ## [0.2.1](https://github.com/mathematic-inc/unfmt/compare/v0.2.0...v0.2.1) (2024-05-04)
 
 
