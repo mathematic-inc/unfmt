@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/mathematic-inc/unfmt/compare/unfmt_macros-v0.2.1...unfmt_macros-v0.2.2) (2024-05-14)
+
+
+### Bug Fixes
+
+* Parse `syn::Lit` instead of `syn::Expr` ([#72](https://github.com/mathematic-inc/unfmt/issues/72)) ([c3621f8](https://github.com/mathematic-inc/unfmt/commit/c3621f83f383a97b66229595a31ef3ec13d8a1ba))
+
 ## [0.2.1](https://github.com/mathematic-inc/unfmt/compare/unfmt_macros-v0.2.0...unfmt_macros-v0.2.1) (2024-05-04)
 
 
