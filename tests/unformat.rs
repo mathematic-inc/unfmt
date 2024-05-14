@@ -63,3 +63,14 @@ fn test_unformat_typed_named_captures() {
     );
     assert_eq!(addr, SocketAddr::from_str("127.0.0.1:3000").ok());
 }
+
+#[test]
+fn test_declmacro() {
+    macro_rules! test_declmacro {
+        ($fmt:literal, $input:expr) => {
+            unformat!($fmt, $input)
+        };
+    }
+
+    test_declmacro!("abc", "abcd");
+}

@@ -11,7 +11,7 @@ use proc_macro2::Span;
 use quote::{quote, ToTokens};
 use syn::{
     parse::{Parse, ParseStream, Result},
-    parse_macro_input, parse_str, Expr, ExprLit, Ident, Lit, LitBool, LitByteStr, Token, TypePath,
+    parse_macro_input, parse_str, Expr, Ident, Lit, LitBool, LitByteStr, Token, TypePath,
 };
 
 struct Unformat {
@@ -24,14 +24,9 @@ struct Unformat {
 impl Parse for Unformat {
     fn parse(input: ParseStream) -> Result<Self> {
         #[allow(clippy::wildcard_enum_match_arm)]
-        let (pattern, is_pattern_str) = match input.parse::<Expr>()? {
-            Expr::Lit(ExprLit {
-                lit: Lit::Str(str), ..
-            }) => (str.value().into_bytes(), true),
-            Expr::Lit(ExprLit {
-                lit: Lit::ByteStr(byte_str),
-                ..
-            }) => (byte_str.value(), false),
+        let (pattern, is_pattern_str) = match input.parse::<Lit>()? {
+            Lit::Str(str) => (str.value().into_bytes(), true),
+            Lit::ByteStr(byte_str) => (byte_str.value(), false),
             _ => return Err(input.error("expected a string literal")),
         };
 
