@@ -45,6 +45,9 @@ assert_eq!(
 );
 assert_eq!((subject, object), (Some("name"), Some("Rho")));
 
+// If you want to ensure the entire string matches, you can add `true` to the end of the macro.
+assert_eq!(unformat!("{1} is {0}", value, true), None);
+
 // If a type implements `FromStr`, you can use it as a type argument. This
 // is written as `{:Type}`.
 assert_eq!(
