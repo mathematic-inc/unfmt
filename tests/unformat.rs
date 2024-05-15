@@ -74,3 +74,14 @@ fn test_declmacro() {
 
     test_declmacro!("abc", "abcd");
 }
+
+#[test]
+fn test_full_match() {
+    assert_eq!(unformat!("({:u8}, {:u8})", "(1, 2)"), Some((1, 2)));
+    assert_eq!(unformat!("({:u8}, {:u8})", "(1, 2)bar"), Some((1, 2)));
+    assert_eq!(unformat!("({:u8}, {:u8})", "foo(1, 2)"), Some((1, 2)));
+
+    assert_eq!(unformat!("({:u8}, {:u8})", "(1, 2)", true), Some((1, 2)));
+    assert_eq!(unformat!("({:u8}, {:u8})", "(1, 2)bar", true), None);
+    assert_eq!(unformat!("({:u8}, {:u8})", "foo(1, 2)", true), None);
+}
