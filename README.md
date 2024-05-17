@@ -37,8 +37,8 @@ assert_eq!(
 
 // You can also name captures using variables, but make sure you check the
 // return is not None.
-let subject;
-let object;
+let mut subject = None;
+let mut object = None;
 assert_eq!(
     unformat!("My {subject} is {object}.", value),
     Some(())
