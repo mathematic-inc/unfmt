@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29
+        uses: actions/checkout@b80ff79f1755d06ba70441c368a6fe801f5f3a62
       - name: Publish
         run: |
           cargo publish --locked --token ${{ secrets.CRATES_IO_TOKEN }} -p unfmt_macros
