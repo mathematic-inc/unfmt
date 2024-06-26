@@ -1,6 +1,6 @@
 [package]
 name = "unfmt_macros"
-version = "0.2.2"
+version = "0.2.3"
 edition = "2021"
 description = "A compile-time pattern matching library that reverses the interpolation process of `format!`."
 license = "MIT OR Apache-2.0"
