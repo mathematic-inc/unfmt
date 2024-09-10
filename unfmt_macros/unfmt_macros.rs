@@ -23,7 +23,10 @@ struct Unformat {
 
 impl Parse for Unformat {
     fn parse(input: ParseStream) -> Result<Self> {
-        #[expect(clippy::wildcard_enum_match_arm, reason = "We want to match on future variants as well.")]
+        #[expect(
+            clippy::wildcard_enum_match_arm,
+            reason = "We want to match on future variants as well."
+        )]
         let (pattern, is_pattern_str) = match input.parse::<Lit>()? {
             Lit::Str(str) => (str.value().into_bytes(), true),
             Lit::ByteStr(byte_str) => (byte_str.value(), false),
