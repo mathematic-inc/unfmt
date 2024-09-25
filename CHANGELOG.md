@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.2.3](https://github.com/mathematic-inc/unfmt/compare/v0.2.2...v0.2.3) (2024-09-25)
+
+
+### Bug Fixes
+
+* **deps:** Update cargo ([#147](https://github.com/mathematic-inc/unfmt/issues/147)) ([95c0a65](https://github.com/mathematic-inc/unfmt/commit/95c0a6533931bbec41544f544f7353112ead0aa0))
+* **deps:** Update cargo ([#85](https://github.com/mathematic-inc/unfmt/issues/85)) ([e8174a7](https://github.com/mathematic-inc/unfmt/commit/e8174a75b65d1c9afe654a049a8bb8059745c6ff))
+* **deps:** Update rust crate proc-macro2 to v1.0.84 ([#98](https://github.com/mathematic-inc/unfmt/issues/98)) ([a0739a3](https://github.com/mathematic-inc/unfmt/commit/a0739a36c87f74afc307829808dfa4182be7fdd4))
+* **deps:** Update rust crate proc-macro2 to v1.0.85 ([#107](https://github.com/mathematic-inc/unfmt/issues/107)) ([9a467d7](https://github.com/mathematic-inc/unfmt/commit/9a467d7b351a2e7b337e775237ce6d818fd4a3b8))
+* **deps:** Update rust crate syn to v2.0.64 ([#76](https://github.com/mathematic-inc/unfmt/issues/76)) ([89c4b2f](https://github.com/mathematic-inc/unfmt/commit/89c4b2f6e815537ff6df9c93e79ffabab893312b))
+* **deps:** Update rust crate syn to v2.0.66 ([#90](https://github.com/mathematic-inc/unfmt/issues/90)) ([40fd131](https://github.com/mathematic-inc/unfmt/commit/40fd13117616038668d7849479fa53cf55fef2d1))
+* **deps:** Update rust crate syn to v2.0.68 ([#156](https://github.com/mathematic-inc/unfmt/issues/156)) ([18ca21f](https://github.com/mathematic-inc/unfmt/commit/18ca21fed94488a8a1aa3d2bb42f9fcaac431b27))
+
 ## [0.2.2](https://github.com/mathematic-inc/unfmt/compare/v0.2.1...v0.2.2) (2024-05-14)
 
 
