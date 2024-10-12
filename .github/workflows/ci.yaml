@@ -72,7 +72,7 @@ jobs:
       - name: Install development tools
         uses: taiki-e/install-action@58a3efb22c892c0e7d722787ab604b97b62ac694
         with:
-          tool: cargo-llvm-cov@0.6.13, cargo-hack@0.6.31
+          tool: cargo-llvm-cov@0.6.14, cargo-hack@0.6.31
       - name: Create directories
         run: mkdir -p target/llvm-cov/lcov
       - name: Generate code coverage
