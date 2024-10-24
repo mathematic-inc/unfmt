@@ -18,11 +18,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@d632683dd7b4114ad314bca15554477dd762a938
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
       - name: Set up Rust
         run: rustup default nightly
       - name: Install development tools
-        uses: taiki-e/install-action@58a3efb22c892c0e7d722787ab604b97b62ac694
+        uses: taiki-e/install-action@e37760a6c3a0e6bdd693a94fec00f036f39bae28
         with:
           tool: cargo-deny@0.16.1, cargo-udeps@0.1.50, cargo-hack@0.6.31
       - name: Install Rust linters
@@ -52,11 +52,11 @@ jobs:
           - nightly
     steps:
       - name: Check out repository
-        uses: actions/checkout@d632683dd7b4114ad314bca15554477dd762a938
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
       - name: Set up Rust
         run: rustup default ${{ matrix.channel }}
       - name: Install development tools
-        uses: taiki-e/install-action@58a3efb22c892c0e7d722787ab604b97b62ac694
+        uses: taiki-e/install-action@e37760a6c3a0e6bdd693a94fec00f036f39bae28
         with:
           tool: cargo-hack@0.6.31
       - name: Run tests
@@ -66,11 +66,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@d632683dd7b4114ad314bca15554477dd762a938
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
       - name: Set up Rust
         run: rustup default nightly
       - name: Install development tools
-        uses: taiki-e/install-action@58a3efb22c892c0e7d722787ab604b97b62ac694
+        uses: taiki-e/install-action@e37760a6c3a0e6bdd693a94fec00f036f39bae28
         with:
           tool: cargo-llvm-cov@0.6.13, cargo-hack@0.6.31
       - name: Create directories
@@ -80,7 +80,7 @@ jobs:
           cargo hack --feature-powerset llvm-cov --no-report --branch --locked --workspace
           cargo llvm-cov report --fail-under-lines 85 --lcov --output-path target/llvm-cov/lcov/${{ github.event.repository.name }}.info
       - name: Upload code coverage
-        uses: romeovs/lcov-reporter-action@87a815f34ec27a5826abba44ce09bbc688da58fd
+        uses: romeovs/lcov-reporter-action@25674467b99fc58cc7706dc246d9647a94b5ba8f
         if: github.event_name == 'pull_request'
         with:
           lcov-file: target/llvm-cov/lcov/${{ github.event.repository.name }}.info
