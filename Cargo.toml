@@ -3,11 +3,11 @@ name = "unfmt"
 version = "0.2.2"
 edition = "2021"
 description = "A compile-time pattern matching library that reverses the interpolation process of `format!`."
-license = "MIT OR Apache-2.0"
+license = "Apache-2.0"
 authors = ["Mathematic Inc"]
 repository = "https://github.com/mathematic-inc/unfmt"
-categories = ["no-std", "value-formatting"]
-keywords = ["unformat", "regex"]
+categories = ["no-std", "parsing"]
+keywords = ["unformat", "pattern-matching", "format", "parsing", "no-std"]
 
 [lib]
 path = "./unfmt.rs"
