@@ -62,3 +62,5 @@ captures in a row (i.e. `{}{}`) are not supported as they aren't well-defined.
 ## Limitations
 
 - There is no backtracking.
+
+> This project is free and open-source work by a 501(c)(3) non-profit. If you find it useful, please consider [donating](https://github.com/sponsors/mathematic-inc).
