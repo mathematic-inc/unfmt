@@ -3,9 +3,9 @@
 extern crate alloc;
 extern crate proc_macro;
 
-use alloc::{borrow::ToOwned, format, vec::Vec};
+use alloc::{borrow::ToOwned as _, format, vec::Vec};
 
-use bstr::ByteSlice;
+use bstr::ByteSlice as _;
 use proc_macro::TokenStream;
 use proc_macro2::Span;
 use quote::{quote, ToTokens};
@@ -15,10 +15,10 @@ use syn::{
 };
 
 struct Unformat {
+    full_match: bool,
+    is_pattern_str: bool,
     pattern: Vec<u8>,
     text: Expr,
-    is_pattern_str: bool,
-    full_match: bool,
 }
 
 impl Parse for Unformat {
@@ -38,15 +38,15 @@ impl Parse for Unformat {
         let text = input.parse::<Expr>()?;
 
         let full_match = if input.parse::<Token![,]>().is_ok() {
-            input.parse::<LitBool>().map_or(false, |bool| bool.value)
+            input.parse::<LitBool>().is_ok_and(|bool| bool.value)
         } else {
             false
         };
         Ok(Self {
+            full_match,
+            is_pattern_str,
             pattern,
             text,
-            is_pattern_str,
-            full_match,
         })
     }
 }
@@ -74,8 +74,8 @@ impl Assignee {
 }
 
 enum CaptureTypePath {
-    Str,
     Bytes,
+    Str,
     Typed(TypePath),
 }
 
@@ -114,8 +114,8 @@ impl ToTokens for CaptureTypePath {
 }
 
 struct Capture {
-    text: Vec<u8>,
     assignee: Assignee,
+    text: Vec<u8>,
     r#type: CaptureTypePath,
 }
 
