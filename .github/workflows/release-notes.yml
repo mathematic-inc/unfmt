@@ -26,7 +26,7 @@ jobs:
           fetch-depth: 0
 
       - name: Write release notes with Claude
-        uses: anthropics/claude-code-action@1ba15be4f0b0c9a026c0c7986668f8f2aa998440 # v1
+        uses: anthropics/claude-code-action@df37d2f0760a4b5683a6e617c9325bc1a36443f6 # v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           claude_args: --allowedTools "Bash(git log:*),Bash(git describe:*),Read,Write"
