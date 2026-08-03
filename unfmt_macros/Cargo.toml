@@ -18,6 +18,6 @@ workspace = true
 
 [dependencies]
 bstr = "1.9.1"
-syn = "2.0.60"
+syn = "3.0.0"
 quote = "1.0.36"
 proc-macro2 = "1.0.81"
