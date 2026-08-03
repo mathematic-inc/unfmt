@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.1](https://github.com/mathematic-inc/unfmt/compare/v0.3.0...v0.3.1) (2026-08-03)
+
+
+### Bug Fixes
+
+* **deps:** Update rust crate syn to v3 ([#237](https://github.com/mathematic-inc/unfmt/issues/237)) ([098d2a0](https://github.com/mathematic-inc/unfmt/commit/098d2a0cbcb88ca949205e70e70f2da8eb134dc7))
+
 ## [0.3.0](https://github.com/mathematic-inc/unfmt/compare/v0.2.3...v0.3.0) (2026-03-11)
 
 
