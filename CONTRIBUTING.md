@@ -10,4 +10,4 @@ If you want to contribute:
 2. Wait for a Mathematic maintainer to review the proposal and decide whether to implement it.
 3. If we accept the proposal, a Mathematic maintainer or agent will open the pull request.
 
-Please do not open a pull request yourself. Organization members, repository collaborators, and approved maintenance bots may open pull requests. We automatically close pull requests from anyone else.
+GitHub restricts pull request creation to Mathematic maintainers and repository collaborators with write, maintain, or admin access, plus authorized maintenance agents. Everyone else should use Discussions.
