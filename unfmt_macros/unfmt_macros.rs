@@ -228,7 +228,7 @@ pub fn unformat(input: TokenStream) -> TokenStream {
             })
             .collect::<Vec<_>>();
 
-        capture_indices.sort_by(|&index_a, &index_b| index_a.cmp(&index_b));
+        capture_indices.sort_by_key(|&index| index);
 
         capture_indices
             .into_iter()
