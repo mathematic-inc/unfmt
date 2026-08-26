@@ -63,4 +63,8 @@ captures in a row (i.e. `{}{}`) are not supported as they aren't well-defined.
 
 - There is no backtracking.
 
+## Contributing
+
+Start with a [Discussion](../../discussions/new) instead of opening a pull request. If we accept the proposal, a Mathematic maintainer or agent will implement it. See [CONTRIBUTING.md](CONTRIBUTING.md) for the full process.
+
 > This project is free and open-source work by a 501(c)(3) non-profit. If you find it useful, please consider [donating](https://github.com/sponsors/mathematic-inc).
