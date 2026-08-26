@@ -208,6 +208,7 @@ impl ToTokens for Capture {
 ///  - Invalid UTF-8 in capture names.
 ///
 #[proc_macro]
+#[inline]
 pub fn unformat(input: TokenStream) -> TokenStream {
     let Unformat {
         pattern,

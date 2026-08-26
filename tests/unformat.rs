@@ -1,18 +1,18 @@
 #![cfg(test)]
 
-use std::{net::SocketAddr, str::FromStr};
+use core::{net::SocketAddr, str::FromStr as _};
 
 use unfmt::unformat;
 
 #[test]
-fn test_unformat() {
+fn unformat() {
     assert_eq!(unformat!("abc", "abc"), Some(()));
     assert_eq!(unformat!("abc", "abcd"), Some(()));
     assert_eq!(unformat!("abc", "acd"), None);
 }
 
 #[test]
-fn test_unformat_captures() {
+fn unformat_captures() {
     assert_eq!(unformat!("{}", "abc"), Some("abc"));
     assert_eq!(unformat!("{}bc", "abc"), Some("a"));
     assert_eq!(unformat!("a{}c", "abc"), Some("b"));
@@ -23,26 +23,26 @@ fn test_unformat_captures() {
 }
 
 #[test]
-fn test_unformat_indexed_captures() {
+fn unformat_indexed_captures() {
     assert_eq!(unformat!("{1}b{0}", "abc"), Some(("c", "a")));
 }
 
 #[test]
-fn test_unformat_named_captures() {
+fn unformat_named_captures() {
     let mut name = None;
     assert_eq!(unformat!("ab{name}", "abc"), Some(()));
     assert_eq!(name, Some("c"));
 }
 
 #[test]
-fn test_unformat_escaped_captures() {
+fn unformat_escaped_captures() {
     let mut name = None;
     assert_eq!(unformat!("a{{{name}}}c", "a{b}c"), Some(()));
     assert_eq!(name, Some("b"));
 }
 
 #[test]
-fn test_unformat_typed_captures() {
+fn unformat_typed_captures() {
     assert_eq!(unformat!("ab{:usize}", "ab152"), Some(152));
     assert_eq!(
         unformat!("ab{:SocketAddr}a", "ab127.0.0.1:3000a"),
@@ -51,7 +51,7 @@ fn test_unformat_typed_captures() {
 }
 
 #[test]
-fn test_unformat_typed_named_captures() {
+fn unformat_typed_named_captures() {
     let mut name = None;
     assert_eq!(unformat!("ab{name:usize}", "ab152"), Some(()));
     assert_eq!(name, Some(152));
@@ -65,7 +65,7 @@ fn test_unformat_typed_named_captures() {
 }
 
 #[test]
-fn test_declmacro() {
+fn declmacro() {
     macro_rules! test_declmacro {
         ($fmt:literal, $input:expr) => {
             unformat!($fmt, $input)
@@ -76,7 +76,7 @@ fn test_declmacro() {
 }
 
 #[test]
-fn test_full_match() {
+fn full_match() {
     assert_eq!(unformat!("({:u8}, {:u8})", "(1, 2)"), Some((1, 2)));
     assert_eq!(unformat!("({:u8}, {:u8})", "(1, 2)bar"), Some((1, 2)));
     assert_eq!(unformat!("({:u8}, {:u8})", "foo(1, 2)"), Some((1, 2)));
