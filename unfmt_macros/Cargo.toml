@@ -7,17 +7,17 @@ license = "Apache-2.0"
 authors = ["Mathematic Inc"]
 repository = "https://github.com/mathematic-inc/unfmt"
 categories = ["development-tools::procedural-macro-helpers", "parsing"]
-keywords = ["unformat", "pattern-matching", "format", "proc-macro", "parsing"]
+keywords = ["format", "parsing", "pattern-matching", "proc-macro", "unformat"]
 
 [lib]
-proc-macro = true
 path = "./unfmt_macros.rs"
+proc-macro = true
+
+[dependencies]
+bstr = "1.13.1"
+proc-macro2 = "1.0.107"
+quote = "1.0.47"
+syn = "3.0.4"
 
 [lints]
 workspace = true
-
-[dependencies]
-bstr = "1.9.1"
-syn = "3.0.0"
-quote = "1.0.36"
-proc-macro2 = "1.0.81"

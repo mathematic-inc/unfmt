@@ -2,7 +2,7 @@
 
 [![crates.io](https://img.shields.io/crates/v/unfmt?style=flat-square)](https://crates.io/crates/unfmt)
 [![license](https://img.shields.io/crates/l/unfmt?style=flat-square)](https://github.com/mathematic-inc/unfmt)
-[![ci](https://img.shields.io/github/actions/workflow/status/mathematic-inc/unfmt/ci.yaml?label=ci&style=flat-square)](https://github.com/mathematic-inc/unfmt/actions/workflows/ci.yaml)
+[![ci](https://img.shields.io/github/actions/workflow/status/mathematic-inc/unfmt/ci.yml?label=ci&style=flat-square)](https://github.com/mathematic-inc/unfmt/actions/workflows/ci.yml)
 [![docs](https://img.shields.io/docsrs/unfmt?style=flat-square)](https://docs.rs/unfmt/latest/unfmt/)
 
 `unfmt` is a compile-time pattern matching library that reverses the
@@ -65,6 +65,6 @@ captures in a row (i.e. `{}{}`) are not supported as they aren't well-defined.
 
 ## Contributing
 
-Start with a [Discussion](../../discussions/new) instead of opening a pull request. If we accept the proposal, a Mathematic maintainer or agent will implement it. When we implement your proposal, the pull request will link to the Discussion and credit you as the proposal's original author. GitHub restricts pull request creation to Mathematic maintainers and repository collaborators with write, maintain, or admin access, plus authorized maintenance agents. See [CONTRIBUTING.md](CONTRIBUTING.md) for the full process.
+Start with a [Discussion](https://github.com/mathematic-inc/unfmt/discussions/new) instead of opening a pull request. If we accept the proposal, a Mathematic maintainer or agent will implement it. When we implement your proposal, the pull request will link to the Discussion and credit you as the proposal's original author. GitHub restricts pull request creation to Mathematic maintainers and repository collaborators with write, maintain, or admin access, plus authorized maintenance agents. See [CONTRIBUTING.md](CONTRIBUTING.md) for the full process.
 
 > This project is free and open-source work by a 501(c)(3) non-profit. If you find it useful, please consider [donating](https://github.com/sponsors/mathematic-inc).

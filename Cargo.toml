@@ -7,58 +7,61 @@ license = "Apache-2.0"
 authors = ["Mathematic Inc"]
 repository = "https://github.com/mathematic-inc/unfmt"
 categories = ["no-std", "parsing"]
-keywords = ["unformat", "pattern-matching", "format", "parsing", "no-std"]
-
-[lib]
-path = "./unfmt.rs"
+keywords = ["format", "no-std", "parsing", "pattern-matching", "unformat"]
 
 [workspace]
 members = ["unfmt_macros"]
 
 [workspace.lints.clippy]
-all = "deny"
-pedantic = "deny"
-restriction = "deny"
-nursery = "deny"
-# REASON: We disable them when they are not idiomatic.
-blanket_clippy_restriction_lints = { level = "allow", priority = 1 }
-# REASON: Not idiomatic.
-implicit_return = { level = "allow", priority = 1 }
-# REASON: False-positives with macros.
-pub_use = { level = "allow", priority = 1 }
-# REASON: Incompatible with pattern_type_mismatch and other lints similar to it.
-ref_patterns = { level = "allow", priority = 1 }
-# REASON: Splitting is generally idiomatic.
-single_call_fn = { level = "allow", priority = 1 }
-# REASON: Some trait methods are meant to be not implemented.
-missing_trait_methods = { level = "allow", priority = 1 }
-# REASON: Not idiomatic.
-shadow_reuse = { level = "allow", priority = 1 }
-# REASON: Not idiomatic.
-shadow_same = { level = "allow", priority = 1 }
-# REASON: Sometimes code is really unreachable.
-unreachable = { level = "allow", priority = 1 }
-# REASON: Not idiomatic.
-question_mark_used = { level = "allow", priority = 1 }
-# REASON: Separated suffixes are more readable.
-separated_literal_suffix = { level = "allow", priority = 1 }
+all = "warn"
 # REASON: Too general.
 as_conversions = { level = "allow", priority = 1 }
-# REASON: Not idiomatic.
-self-named-module-files = { level = "allow", priority = 1 }
-# REASON: Too noisy.
-missing_docs_in_private_items = { level = "allow", priority = 1 }
-# REASON: Too noisy.
-exhaustive_structs = { level = "allow", priority = 1 }
+# REASON: We disable them when they are not idiomatic.
+blanket_clippy_restriction_lints = { level = "allow", priority = 1 }
 # REASON: Too noisy.
 exhaustive_enums = { level = "allow", priority = 1 }
+# REASON: Too noisy.
+exhaustive_structs = { level = "allow", priority = 1 }
 # REASON: Expect may be used for error handling.
 expect_used = { level = "allow", priority = 1 }
+# REASON: Not idiomatic.
+implicit_return = { level = "allow", priority = 1 }
+# REASON: Too noisy.
+missing_docs_in_private_items = { level = "allow", priority = 1 }
+# REASON: Some trait methods are meant to be not implemented.
+missing_trait_methods = { level = "allow", priority = 1 }
 # REASON: Too noisy.
 module_name_repetitions = { level = "allow", priority = 1 }
 # REASON: Clashes with clippy::pattern_type_mismatch
 needless_borrowed_reference = { level = "allow", priority = 1 }
+nursery = "warn"
+pedantic = "warn"
+# REASON: False-positives with macros.
+pub_use = { level = "allow", priority = 1 }
+# REASON: Not idiomatic.
+question_mark_used = { level = "allow", priority = 1 }
+# REASON: Incompatible with pattern_type_mismatch and other lints similar to it.
+ref_patterns = { level = "allow", priority = 1 }
+restriction = "warn"
+# REASON: Not idiomatic.
+self-named-module-files = { level = "allow", priority = 1 }
+# REASON: Separated suffixes are more readable.
+separated_literal_suffix = { level = "allow", priority = 1 }
+# REASON: Not idiomatic.
+shadow_reuse = { level = "allow", priority = 1 }
+# REASON: Not idiomatic.
+shadow_same = { level = "allow", priority = 1 }
+# REASON: Splitting is generally idiomatic.
+single_call_fn = { level = "allow", priority = 1 }
+# REASON: Sometimes code is really unreachable.
+unreachable = { level = "allow", priority = 1 }
+
+[lib]
+path = "./unfmt.rs"
 
 [dependencies]
-bstr = "1.9.1"
+bstr = "1.13.1"
 unfmt_macros = { path = "unfmt_macros", version = "0.3.0" }
+
+[lints]
+workspace = true
