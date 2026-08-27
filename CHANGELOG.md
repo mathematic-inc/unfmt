@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.2](https://github.com/mathematic-inc/unfmt/compare/v0.3.1...v0.3.2) (2026-08-27)
+
+
+### Bug Fixes
+
+* Declare Rust 1.81 MSRV ([#254](https://github.com/mathematic-inc/unfmt/issues/254)) ([9761f27](https://github.com/mathematic-inc/unfmt/commit/9761f27084dbd94bbe0b5d028a938632445c6997))
+
 ## [0.3.1](https://github.com/mathematic-inc/unfmt/compare/v0.3.0...v0.3.1) (2026-08-27)
 
 ### Bug Fixes
