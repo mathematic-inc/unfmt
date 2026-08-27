@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.1](https://github.com/mathematic-inc/unfmt/compare/v0.3.0...v0.3.1) (2026-08-27)
+
+
+### Bug Fixes
+
+* **deps:** Update rust crate syn to v3 ([#237](https://github.com/mathematic-inc/unfmt/issues/237)) ([db9eec5](https://github.com/mathematic-inc/unfmt/commit/db9eec5a7574bedf0d97baf24e28bbec010ef28b))
+* Satisfy current clippy lint ([7e06728](https://github.com/mathematic-inc/unfmt/commit/7e06728ada3902e07addfcc8f7ddca1c1b918d98))
+
 ## [0.3.0](https://github.com/mathematic-inc/unfmt/compare/v0.2.3...v0.3.0) (2026-03-11)
 
 ### ⚠ BREAKING CHANGES
