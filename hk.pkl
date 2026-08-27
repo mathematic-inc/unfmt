@@ -181,6 +181,12 @@ local checks = new Mapping<String, Step> {
   }
 
   // Rust.
+  ["cargo-lockfile"] = new Step {
+    glob = List("Cargo.toml", "Cargo.lock", "**/Cargo.toml")
+    check =
+      "worktree=$(mktemp -d) && trap 'rm -rf \"$worktree\"' EXIT && git ls-files -z | tar --null -T - -cf - | tar -xf - -C \"$worktree\" && cargo generate-lockfile --manifest-path \"$worktree/Cargo.toml\" && diff -u Cargo.lock \"$worktree/Cargo.lock\""
+    profiles = slow
+  }
   ["cargo-fmt"] = (Builtins.cargo_fmt) {
     glob = rustFiles
     exclude = generatedFiles
