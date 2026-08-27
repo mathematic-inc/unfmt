@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.3.1](https://github.com/mathematic-inc/unfmt/compare/unfmt_macros-v0.2.2...unfmt_macros-v0.3.1) (2026-08-27)
+
+### Maintenance
+
+* Migrate the proc-macro dependency to Syn 3
+  ([#237](https://github.com/mathematic-inc/unfmt/issues/237))
+  ([db9eec5](https://github.com/mathematic-inc/unfmt/commit/db9eec5a7574bedf0d97baf24e28bbec010ef28b))
+* Satisfy the current Clippy guidance
+  ([7e06728](https://github.com/mathematic-inc/unfmt/commit/7e06728ada3902e07addfcc8f7ddca1c1b918d98))
+
 ## [0.2.2](https://github.com/mathematic-inc/unfmt/compare/unfmt_macros-v0.2.1...unfmt_macros-v0.2.2) (2024-05-14)
 
 ### Bug Fixes

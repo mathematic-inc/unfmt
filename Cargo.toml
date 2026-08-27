@@ -1,6 +1,6 @@
 [package]
 name = "unfmt"
-version = "0.3.0"
+version = "0.3.1"
 edition = "2021"
 description = "A compile-time pattern matching library that reverses the interpolation process of `format!`."
 license = "Apache-2.0"
@@ -61,7 +61,7 @@ path = "./unfmt.rs"
 
 [dependencies]
 bstr = "1.13.1"
-unfmt_macros = { path = "unfmt_macros", version = "0.3.0" }
+unfmt_macros = { path = "unfmt_macros", version = "0.3.1" }
 
 [lints]
 workspace = true
