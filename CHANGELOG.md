@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.3](https://github.com/mathematic-inc/unfmt/compare/v0.3.2...v0.3.3) (2026-09-05)
+
+
+### Bug Fixes
+
+* **ci:** Harden release workflows and repository checks ([#257](https://github.com/mathematic-inc/unfmt/issues/257)) ([635b7d6](https://github.com/mathematic-inc/unfmt/commit/635b7d60b9ae1cf4369a1fde9b3a131f89339e44))
+
 ## [0.3.2](https://github.com/mathematic-inc/unfmt/compare/v0.3.1...v0.3.2) (2026-08-27)
 
 
