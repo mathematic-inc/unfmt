@@ -45,7 +45,7 @@ question_mark_used = { level = "allow", priority = 1 }
 ref_patterns = { level = "allow", priority = 1 }
 restriction = "warn"
 # REASON: Not idiomatic.
-self-named-module-files = { level = "allow", priority = 1 }
+self_named_module_files = { level = "allow", priority = 1 }
 # REASON: Separated suffixes are more readable.
 separated_literal_suffix = { level = "allow", priority = 1 }
 # REASON: Not idiomatic.

@@ -18,7 +18,7 @@ proc-macro = true
 bstr = "1.13.1"
 proc-macro2 = "1.0.107"
 quote = "1.0.47"
-syn = "3.0.4"
+syn = "3.0.9"
 
 [lints]
 workspace = true
