@@ -4,11 +4,10 @@ version = "0.3.3"
 edition = "2021"
 rust-version = "1.81"
 description = "A compile-time pattern matching library that reverses the interpolation process of `format!`."
-license = "Apache-2.0"
-authors = ["Mathematic Inc"]
 repository = "https://github.com/mathematic-inc/unfmt"
-categories = ["development-tools::procedural-macro-helpers", "parsing"]
+license = "Apache-2.0"
 keywords = ["format", "parsing", "pattern-matching", "proc-macro", "unformat"]
+categories = ["development-tools::procedural-macro-helpers", "parsing"]
 
 [lib]
 path = "./unfmt_macros.rs"
