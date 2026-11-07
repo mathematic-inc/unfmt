@@ -303,9 +303,9 @@ fn compile(pattern: &[u8], is_pattern_str: bool) -> (Vec<u8>, Vec<Capture>) {
     }
 
     assert!(
-        compiled_pattern.windows(2).all(|parts| parts
-            .iter()
-            .any(|&Capture { ref text, .. }| !text.is_empty())),
+        compiled_pattern
+            .windows(2)
+            .all(|parts| parts.iter().any(|capture| !capture.text.is_empty())),
         "consecutive captures are not allowed"
     );
 
