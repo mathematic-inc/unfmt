@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.4](https://github.com/mathematic-inc/unfmt/compare/v0.3.3...v0.3.4) (2026-11-07)
+
+
+### Bug Fixes
+
+* **deps:** Update dependencies across the stack ([#278](https://github.com/mathematic-inc/unfmt/issues/278)) ([62361e7](https://github.com/mathematic-inc/unfmt/commit/62361e7b215df01596fef0d10224f4a37d2e4d88))
+* Replace deprecated APIs and tooling ([#280](https://github.com/mathematic-inc/unfmt/issues/280)) ([69a4303](https://github.com/mathematic-inc/unfmt/commit/69a4303ca308aa6b4273c2a68f015602440c2da9))
+
 ## [0.3.3](https://github.com/mathematic-inc/unfmt/compare/v0.3.2...v0.3.3) (2026-09-05)
 
 
