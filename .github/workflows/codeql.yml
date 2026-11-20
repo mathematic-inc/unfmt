@@ -8,38 +8,37 @@ on:
     - cron: "0 6 * * 1"
   workflow_dispatch:
 
-permissions:
-  contents: read
-
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: true
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions: {}
 
 jobs:
   analyze:
     name: Analyze (${{ matrix.language }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
     permissions:
       contents: read
       security-events: write
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
     strategy:
       fail-fast: false
       matrix:
         language: [actions, rust]
     steps:
-      - name: Checkout
+      - name: Check out repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
 
-      - name: Install Rust toolchain
+      - name: Install Rust
         if: matrix.language == 'rust'
         uses: dtolnay/rust-toolchain@b725eda525362e7cf34af9a7243cac1e3f01a7ec # stable
         with:
           toolchain: stable
 
-      - name: Cache cargo artifacts
+      - name: Restore Cargo cache
         if: matrix.language == 'rust'
         uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0 # v2.9.3
 
@@ -50,5 +49,5 @@ jobs:
           languages: ${{ matrix.language }}
           queries: security-extended
 
-      - name: Perform CodeQL Analysis
+      - name: Perform CodeQL analysis
         uses: github/codeql-action/analyze@33d7b85da1a04171e211befe2c739303b9a4c066 # v4.39.3
