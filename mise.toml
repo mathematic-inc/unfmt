@@ -4,29 +4,45 @@ cargo.binstall_native = true
 idiomatic_version_file_enable_tools = ["node", "pnpm", "python", "ruff", "rust"]
 npm.package_manager = "npm"
 
+[tool_alias]
+toolconfig = "github:mathematic-inc/toolconfig"
+
 [tools]
-jactionlint = "2.5.0"
+jactionlint = "2.6.0"
 ghalint = "1.6.0"
 gitleaks = "8.30.1"
-harper-cli = "3.0.0"
-hk = "2.11.1"
+harper-cli = "3.3.0"
+hk = "2.13.0"
 jq = "1.8.2"
 lychee = "0.24.2"
 pinact = "5.0.2"
 python = "3.15.2"
-rumdl = "0.3.2"
-rust = { version = "1.99.1", profile = "minimal", components = [
+rumdl = "0.3.5"
+rust = { version = "1.100.0", profile = "minimal", components = [
   "clippy",
   "rustfmt",
 ] }
 shellcheck = "0.11.0"
 shfmt = "3.14.1"
-tombi = "1.10.0"
-typos = "1.52.0"
+tombi = "1.11.3"
+toolconfig = "2026.11.6"
+typos = "1.52.2"
 uv = "0.13.7"
 zizmor = "1.32.0"
-"aqua:EmbarkStudios/cargo-deny" = { version = "0.20.2", depends = ["rust"] }
+"aqua:EmbarkStudios/cargo-deny" = { version = "0.21.0", depends = ["rust"] }
 "aqua:anordal/shellharden" = "4.3.2"
-"aqua:apple/pkl" = "0.33.0"
-"aqua:owenlamont/ryl" = "0.29.0"
-"github:mongodb/kingfisher" = "2.17.0"
+"aqua:apple/pkl" = "0.33.1"
+"aqua:owenlamont/ryl" = "0.30.0"
+"github:mongodb/kingfisher" = "2.19.1"
+
+[tasks.check]
+description = "Check the repository"
+run = ["toolconfig check --strict", "hk check --all --slow"]
+
+[tasks.fix]
+description = "Fix the repository"
+run = "hk fix --all --slow"
+
+[tasks.generate]
+description = "Write the files that ToolConfig generates"
+run = "toolconfig generate --strict"
