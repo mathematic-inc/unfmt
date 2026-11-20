@@ -9,7 +9,5 @@
       "include-component-in-tag": false
     }
   },
-  "plugins": [
-    "sentence-case"
-  ]
+  "plugins": ["sentence-case"]
 }
