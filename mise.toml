@@ -33,6 +33,7 @@ zizmor = "1.32.0"
 "aqua:anordal/shellharden" = "4.3.2"
 "aqua:apple/pkl" = "0.33.1"
 "aqua:owenlamont/ryl" = "0.30.0"
+"aqua:oxc-project/oxc/oxfmt" = "0.79.0"
 "github:mongodb/kingfisher" = "2.19.1"
 
 [tasks.check]
