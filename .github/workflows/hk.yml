@@ -35,5 +35,4 @@ jobs:
         run: cargo-deny --locked --workspace check
       - name: Run checks
         if: github.event_name != 'schedule'
-        # The action ran ToolConfig.
         run: hk check --all --slow --skip-step toolconfig
