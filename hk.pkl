@@ -6,7 +6,6 @@ steps {
     check = "cargo metadata --locked --format-version 1 --all-features > /dev/null"
     profiles = List("slow")
   }
-  // The step of the organization sets no `workspace_indicator`, so hk cannot render the `dir`
-  // of the builtin step.
+  // The builtin `dir` is `{{workspace}}`, which hk does not define without `workspace_indicator`.
   ["cargo-deny"] { dir = "{{root}}" }
 }
