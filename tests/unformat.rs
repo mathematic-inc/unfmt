@@ -1,3 +1,4 @@
+//! Tests of the `unformat!` macro.
 #![cfg(test)]
 
 use core::{net::SocketAddr, str::FromStr as _};

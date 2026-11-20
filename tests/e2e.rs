@@ -1,3 +1,4 @@
+//! End-to-end test of the `unformat!` macro in a new crate.
 #![cfg(test)]
 
 use core::str::from_utf8;
