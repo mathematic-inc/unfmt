@@ -1,25 +1,22 @@
-name: hk
+name: Audit
 
 on:
-  pull_request:
-  push:
-    branches:
-      - main
   schedule:
     - cron: "17 9 * * *"
 
-permissions:
-  contents: read
-
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
+
+permissions: {}
 
 jobs:
-  check:
-    name: Check
+  audit-dependencies:
+    name: Audit dependencies
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    permissions:
+      contents: read
     steps:
       - name: Check out repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -28,11 +25,7 @@ jobs:
           persist-credentials: false
       - name: Install tools
         uses: jdx/mise-action@b44d12e7d0d8ee7461bb893e1b1993500433185b # v5.2.7
-      - name: Check and generate the ToolConfig files
+      - name: Check and generate ToolConfig files
         uses: mathematic-inc/toolconfig-action@1baf7b021e8bf6f0e20737753c13af0fc93c8570 # v2026.11.0
-      - name: Audit dependencies
-        if: github.event_name == 'schedule'
+      - name: Check dependency policy
         run: cargo-deny --locked --workspace check
-      - name: Run checks
-        if: github.event_name != 'schedule'
-        run: hk check --all --slow --skip-step toolconfig
